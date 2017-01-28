@@ -40,21 +40,31 @@ namespace Assets.Scripts
         {
             if (corpseToRevive==null) return;
             FindObjectOfType<CameraController>().player = gameObject;
+
+            transform.position = corpseToRevive.transform.position;
+            SetNewHeroVariables();
+
+
+            dead = false;
+            gameObject.SetActive(true);
+
+            var corpses = FindObjectsOfType<Corpse>();
+            foreach (var corpse in corpses)
+            {
+                Destroy(corpse.gameObject);
+            }
+        }
+
+        private void SetNewHeroVariables()
+        {
             var NewHero = corpseToRevive.Hero;
             Debug.Log(NewHero.ToString());
-            transform.position = corpseToRevive.transform.position;
             GetComponent<Movement>().speed = NewHero.Walkspeed;
             GetComponent<HealthSystem>().maxHealth = NewHero.MaxHealth;
             GetComponent<HealthSystem>().SetMaxHealth();
 
             GetComponent<SpriteRenderer>().sprite = NewHero.CharacterSprite;
             GetComponent<Animator>().runtimeAnimatorController = NewHero.CharacterAnimator;
-
-            dead = false;
-            gameObject.SetActive(true);
-            Destroy(corpseToRevive);
         }
-
-
     }
 }

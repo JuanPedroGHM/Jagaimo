@@ -39,7 +39,7 @@ namespace Assets.Scripts
         public void Revive()
         {
             if (corpseToRevive==null) return;
-            FindObjectOfType<CompleteCameraController>().player = gameObject;
+            FindObjectOfType<CameraController>().player = gameObject;
             var NewHero = corpseToRevive.Hero;
             Debug.Log(NewHero.ToString());
             transform.position = corpseToRevive.transform.position;

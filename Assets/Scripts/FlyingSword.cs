@@ -20,7 +20,7 @@ public class FlyingSword : MonoBehaviour {
         Target = new GameObject().transform;
         _moveTowards = GetComponent<MoveTowards>();
         _moveTowards.Target = Target;
-        FindObjectOfType<CompleteCameraController>().player = gameObject;
+        FindObjectOfType<CameraController>().player = gameObject;
     }
 	
     // Update is called once per frame

@@ -39,7 +39,7 @@ public class EnemyManager : MonoBehaviour
 	}
 	
 
-	// Update is called once per frame
+	// Update is called onced per frame
 	void Update () {
 
 	    if (timeSinceLastSpawn >= timeBetweenSpawns)

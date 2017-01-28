@@ -5,9 +5,15 @@ public class HealthSystem :MonoBehaviour
     public float health;
 	public float maxHealth;
 
-	public void Start(){
-		health = maxHealth;
+	public void Start()
+	{
+	    SetMaxHealth();
 	}
+
+    public void SetMaxHealth()
+    {
+        health = maxHealth;
+    }
 
     public void Damage(float damage)
     {

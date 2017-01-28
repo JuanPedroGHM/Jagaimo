@@ -19,6 +19,9 @@ public class PlayerReviveAsNew : MonoBehaviour
     {
         Player.GetComponent<Movement>().speed = newHero.Walkspeed;
         Player.GetComponent<HealthSystem>().maxHealth = newHero.MaxHealth;
-        Player.GetComponent<HealthSystem>().SetToMaxHealth();
+        Player.GetComponent<HealthSystem>().SetMaxHealth();
+
+        Player.GetComponent<SpriteRenderer>().sprite = newHero.CharacterSprite;
+        Player.GetComponent<Animator>().runtimeAnimatorController = newHero.CharacterAnimator;
     }
 }

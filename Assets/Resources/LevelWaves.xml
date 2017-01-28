@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LevelCollection>
+	<LevelWaves>
+		<LevelWave Level="1"
+							 EnemyType="1"
+							 EnemyCount="5"
+							 SpawnTimeInSeconds="0.2">
+		</LevelWave>
+		<LevelWave Level="2"
+					 EnemyType="1"
+					 EnemyCount="1"
+					 SpawnTimeInSeconds="4">
+		</LevelWave>
+	</LevelWaves>
+</LevelCollection>

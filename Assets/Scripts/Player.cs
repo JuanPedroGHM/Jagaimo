@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
                     _enemiesInTrigger.Remove(enemy);
                     return;
                 }
-                enemy.HealthSystem.Damage(SwordDamage);
+                enemy.HealthSys.Damage(SwordDamage);
             }
         }
     }

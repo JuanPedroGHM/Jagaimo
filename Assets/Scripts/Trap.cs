@@ -19,7 +19,7 @@ public class Trap : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		
-		if (col.gameObject.name == "Character" && active) {
+		if ((col.gameObject.name == "Character" || col.gameObject.name == "Enemy") && active) {
 			Debug.Log ("Triggerd Trap");
 			SpriteRenderer sprite = gameObject.GetComponent<SpriteRenderer> ();
 			sprite.color = new Color (0, 0, 0);

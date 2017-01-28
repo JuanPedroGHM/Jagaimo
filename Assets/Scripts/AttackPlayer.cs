@@ -20,6 +20,11 @@ public class AttackPlayer : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other) {
+
+		if (other.gameObject.tag == "trap") {
+			Physics2D.IgnoreCollision (other, GetComponent<Collider2D> ());
+		}
+
         if(other.gameObject.GetComponent<Player>() == null) return;
 
         timeInZone += Time.deltaTime;

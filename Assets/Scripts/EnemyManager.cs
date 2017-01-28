@@ -16,7 +16,7 @@ public class EnemyManager : MonoBehaviour
 	}
 	public List<Spawner> Spawners;
 
-	private GameObject enemyPrefab;
+	private Enemy enemyPrefab;
 	private int waveCounter;
 	private int enemyCounter;
 	private float timeBetweenSpawns;
@@ -34,7 +34,7 @@ public class EnemyManager : MonoBehaviour
 			timeBetweenSpawns = levelWaves[0].SpawnTimeInSeconds;
 			enemyCounter = levelWaves[0].EnemyCount;
 			waveCounter = 0;
-			enemyPrefab = (GameObject)Resources.Load(ENEMY_DEFAULT_NAME + levelWaves[0].EnemyType, typeof(GameObject));
+			enemyPrefab = (Enemy)Resources.Load(ENEMY_DEFAULT_NAME + levelWaves[0].EnemyType, typeof(Enemy));
 		}
 	}
 	
@@ -59,7 +59,7 @@ public class EnemyManager : MonoBehaviour
 
 				if(levelWaves.Count > waveCounter)
 				{
-					enemyPrefab = (GameObject)Resources.Load(ENEMY_DEFAULT_NAME + levelWaves[waveCounter].EnemyType, typeof(GameObject));
+					enemyPrefab = (Enemy)Resources.Load(ENEMY_DEFAULT_NAME + levelWaves[waveCounter].EnemyType, typeof(Enemy));
 					timeBetweenSpawns = levelWaves[waveCounter].SpawnTimeInSeconds;
 					enemyCounter = levelWaves[waveCounter].EnemyCount;
 				}

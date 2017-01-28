@@ -17,7 +17,6 @@ public class Enemy : MonoBehaviour
 	protected virtual void Start ()
 	{
 		HealthSys = GetComponent<HealthSystem> ();
-	    Player = FindObjectOfType<Player>();
 	    _moveTowards = GetComponent<MoveTowards>();
 	    _moveTowards.Target = Player.transform;
 	}

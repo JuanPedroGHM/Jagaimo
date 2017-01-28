@@ -2,12 +2,18 @@
 
 public class Spawner :MonoBehaviour
 {
-    public void SpawnEnemy(GameObject Enemy)
+    private Player Player;
+    public void Start()
+    {
+        Player = FindObjectOfType<Player>();
+    }
+
+    public void SpawnEnemy(Enemy Enemy)
     {
 		if (Enemy != null)
 		{
-			Instantiate(Enemy, transform.position, transform.rotation);
-			return;
+		    var enemy = Instantiate(Enemy, transform.position, transform.rotation);
+		    enemy.Player = Player;
 		}
 		else
 		{

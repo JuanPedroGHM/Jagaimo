@@ -8,6 +8,6 @@ public class KillEnemyOnHit : MonoBehaviour {
     {
         //hits the body of the enemy but need to kill the parent
         if (other.gameObject.GetComponentInParent<Enemy>() == null) return;
-        other.gameObject.GetComponentInParent<Enemy>().HealthSystem.Damage(10000000000);
+        other.gameObject.GetComponentInParent<Enemy>().HealthSys.Damage(10000000000);
     }
 }

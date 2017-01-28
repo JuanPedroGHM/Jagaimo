@@ -4,12 +4,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private List<Enemy> _enemiesInTrigger;
+    public float SwordDamage;
     public HealthSystem HealthSystem;
 	public Sword sword;
     void Start()
     {
+		sword = FindObjectOfType<Sword> ();
         _enemiesInTrigger = new List<Enemy>();
-		sword = FindObjectOfType<Sword>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -35,7 +36,6 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
 			sword._animator.SetTrigger ("attack");
             foreach (var enemy in _enemiesInTrigger)
             {
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
                     _enemiesInTrigger.Remove(enemy);
                     return;
                 }
-				enemy.HealthSystem.Damage(sword.SwordDamage);
+				enemy.HealthSys.Damage(sword.SwordDamage);
             }
         }
     }

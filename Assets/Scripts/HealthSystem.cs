@@ -21,7 +21,7 @@ public class HealthSystem :MonoBehaviour
         if (health <= 0) Die();
     }
 
-    private void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
     }

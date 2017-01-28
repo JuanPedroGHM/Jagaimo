@@ -7,12 +7,12 @@ public class Enemy : MonoBehaviour
 {
     [NonSerialized]
     public Player Player;
-    public HealthSystem HealthSystem;
-    private MoveTowards _moveTowards;
+    public HealthSystem HealthSys;
+    protected MoveTowards _moveTowards;
 
 
 	// Use this for initialization
-	void Start ()
+	protected virtual void Start ()
 	{
 	    Player = FindObjectOfType<Player>();
 	    _moveTowards = GetComponent<MoveTowards>();

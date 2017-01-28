@@ -32,7 +32,6 @@ public class AttackPlayer : MonoBehaviour
 
     private void ExecuteAttack()
     {
-        Debug.Log("attack");
         _animator.SetTrigger("attack");
         _player.HealthSystem.Damage(AttackDamage);
     }

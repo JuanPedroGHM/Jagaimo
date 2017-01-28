@@ -12,6 +12,7 @@ public class HealthSystem :MonoBehaviour
 
     public void SetMaxHealth()
     {
+        Debug.Log("SetMaxHealth");
         health = maxHealth;
     }
 
@@ -21,7 +22,7 @@ public class HealthSystem :MonoBehaviour
         if (health <= 0) Die();
     }
 
-    private void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
     }

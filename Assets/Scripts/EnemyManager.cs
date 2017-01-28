@@ -59,7 +59,6 @@ public class EnemyManager : MonoBehaviour
 
 				if(levelWaves.Count > waveCounter)
 				{
-					//TODO: load enemy type
 					enemyPrefab = (GameObject)Resources.Load(ENEMY_DEFAULT_NAME + levelWaves[waveCounter].EnemyType, typeof(GameObject));
 					timeBetweenSpawns = levelWaves[waveCounter].SpawnTimeInSeconds;
 					enemyCounter = levelWaves[waveCounter].EnemyCount;

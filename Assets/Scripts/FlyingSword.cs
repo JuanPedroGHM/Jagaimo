@@ -17,7 +17,6 @@ public class FlyingSword : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        Target = new GameObject().transform;
         _moveTowards = GetComponent<MoveTowards>();
         _moveTowards.Target = Target;
         FindObjectOfType<CameraController>().player = gameObject;
@@ -29,7 +28,7 @@ public class FlyingSword : MonoBehaviour {
 	    {
 
 	        PlayerHealthSystem.Revive();
-	        Destroy(this);
+	        Destroy(gameObject);
 	    }
 	}
 

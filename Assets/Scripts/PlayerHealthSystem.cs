@@ -27,7 +27,7 @@ namespace Assets.Scripts
                return;
             }
 
-            var flyingSword = Instantiate(FlyingSword);
+            var flyingSword = Instantiate(FlyingSword,transform.position,transform.rotation);
             flyingSword.PlayerHealthSystem = this;
             Debug.Log(corpseToRevive);
             flyingSword.Target = corpseToRevive.transform;

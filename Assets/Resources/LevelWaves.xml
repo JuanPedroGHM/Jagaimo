@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <LevelCollection>
 	<LevelWaves>
+		<!--Wave 1-->
 		<LevelWave Level="1"
 							 EnemyType="1"
 							 EnemyCount="5"
 							 SpawnTimeInSeconds="0.2">
 		</LevelWave>
+		<!--Pause-->
+		<LevelWave Level="1"
+					 EnemyType="2"
+					 EnemyCount="1"
+					 SpawnTimeInSeconds="4">
+		</LevelWave>
+		<!--Pause-->
+		<!--Wave 2-->
 		<LevelWave Level="2"
-					 EnemyType="1"
+					 EnemyType="2"
+					 EnemyCount="5"
+					 SpawnTimeInSeconds="0.4">
+		</LevelWave>
+		<!--Last Wave-->
+		<LevelWave Level="3"
+					 EnemyType="3"
 					 EnemyCount="1"
 					 SpawnTimeInSeconds="4">
 		</LevelWave>

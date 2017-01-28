@@ -12,7 +12,6 @@ public class HealthSystem :MonoBehaviour
 
     public void SetMaxHealth()
     {
-        Debug.Log("SetMaxHealth");
         health = maxHealth;
     }
 

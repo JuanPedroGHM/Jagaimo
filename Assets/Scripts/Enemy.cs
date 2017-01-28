@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(HealthSystem))]
 public class Enemy : MonoBehaviour
 {
     [NonSerialized]

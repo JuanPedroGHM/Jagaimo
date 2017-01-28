@@ -10,6 +10,7 @@ namespace Assets.Scripts
         private float speedy;
         private Animator myAnimator;
         private bool facingRight = false;
+		private Sword sword;
 		
 		private bool canMove = true;
         // Use this for initialization
@@ -17,6 +18,7 @@ namespace Assets.Scripts
         {
 
             myAnimator = gameObject.GetComponent<Animator>();
+			sword = FindObjectOfType<Sword> ();
         }
 	
         // Update is called once per frame
@@ -66,6 +68,11 @@ namespace Assets.Scripts
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+
+			//Transform sword to flip with the character.
+//			Vector3 swordScale = sword.transform.localScale;
+//			swordScale.x *= -1;
+//			sword.transform.localScale = swordScale;
         }
     }
 }

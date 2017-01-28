@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
-    [SerializeField]
+	private const string ENEMY_DEFAULT_NAME = "Enemy";
+
+	[SerializeField]
 	[System.Serializable]
 	public struct Wave
 	{
@@ -15,6 +16,7 @@ public class EnemyManager : MonoBehaviour
 	}
 	public List<Spawner> Spawners;
 
+	private GameObject enemyPrefab;
 	private int waveCounter;
 	private int enemyCounter;
 	private float timeBetweenSpawns;
@@ -32,7 +34,7 @@ public class EnemyManager : MonoBehaviour
 			timeBetweenSpawns = levelWaves[0].SpawnTimeInSeconds;
 			enemyCounter = levelWaves[0].EnemyCount;
 			waveCounter = 0;
-			//TODO: load enemy type
+			enemyPrefab = (GameObject)Resources.Load(ENEMY_DEFAULT_NAME + levelWaves[0].EnemyType, typeof(GameObject));
 		}
 	}
 	
@@ -45,7 +47,7 @@ public class EnemyManager : MonoBehaviour
 			//spawn enemies
 	        foreach (var spawner in Spawners)
 	        {
-	            spawner.SpawnEnemy(EnemyPrefab);
+	            spawner.SpawnEnemy(enemyPrefab);
 	        }
 	        timeSinceLastSpawn = 0;
 			enemyCounter--;
@@ -58,6 +60,7 @@ public class EnemyManager : MonoBehaviour
 				if(levelWaves.Count > waveCounter)
 				{
 					//TODO: load enemy type
+					enemyPrefab = (GameObject)Resources.Load(ENEMY_DEFAULT_NAME + levelWaves[waveCounter].EnemyType, typeof(GameObject));
 					timeBetweenSpawns = levelWaves[waveCounter].SpawnTimeInSeconds;
 					enemyCounter = levelWaves[waveCounter].EnemyCount;
 				}

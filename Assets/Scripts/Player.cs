@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 
 	private void Attack()
 	{
-		_sword._animator.SetTrigger("attack");
+		_sword._animator.Play("Attack");
 	    FindObjectOfType<SoundManager>().PlaySound("Player_Slash");
 	    _enemiesInTrigger.RemoveAll(t => t == null);
 	    foreach (var enemy in _enemiesInTrigger)

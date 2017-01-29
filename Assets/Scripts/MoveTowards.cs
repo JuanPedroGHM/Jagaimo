@@ -5,6 +5,8 @@ public class MoveTowards : MonoBehaviour
     public float Turnspeed;
     public float Walkspeed;
     public Vector2 WalkDirection;
+    public bool Turn;
+
     private Transform _target;
 
 
@@ -30,7 +32,7 @@ public class MoveTowards : MonoBehaviour
             WalkDirection = _target.position - transform.position;
             WalkDirection.Normalize();
 
-
+            if (!Turn) return;
             float angle = Mathf.Atan2(WalkDirection.y, WalkDirection.x) * Mathf.Rad2Deg;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * Turnspeed);

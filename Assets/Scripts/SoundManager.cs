@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(string clipName)
     {
+        Debug.Log("Try to play sound: " + clipName );
         var clip = AudioClips.First(t => t.name == clipName);
         if (clip == null) return;
         _audioSource.PlayOneShot(clip);

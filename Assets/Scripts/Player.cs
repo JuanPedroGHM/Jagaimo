@@ -8,12 +8,11 @@ public class Player : MonoBehaviour
 	private float nextAttack = 0;
 
 	public float AttacksPerSecond = 0.5f;
-    public float SwordDamage;
     public HealthSystem HealthSystem;
-	public Sword sword;
+	private Sword _sword;
     void Start()
     {
-		sword = FindObjectOfType<Sword> ();
+		_sword = GetComponentInChildren<Sword>();
         _enemiesInTrigger = new List<Enemy>();
     }
 
@@ -48,15 +47,13 @@ public class Player : MonoBehaviour
 
 	private void Attack()
 	{
-		sword._animator.SetTrigger("attack");
-		foreach (var enemy in _enemiesInTrigger)
+		_sword._animator.SetTrigger("attack");
+	    FindObjectOfType<SoundManager>().PlaySound("Player_Slash");
+	    _enemiesInTrigger.RemoveAll(t => t == null);
+	    foreach (var enemy in _enemiesInTrigger)
 		{
-			if (enemy == null)
-			{
-				_enemiesInTrigger.Remove(enemy);
-				return;
-			}
-			enemy.HealthSys.Damage(sword.SwordDamage);
+			if (enemy == null)return;
+			enemy.HealthSys.Damage(_sword.SwordDamage);
 		}
 	}
 }

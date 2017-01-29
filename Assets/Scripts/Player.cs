@@ -4,6 +4,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private List<Enemy> _enemiesInTrigger;
+	//time when next attack is allowed
+	private float nextAttack = 0;
+
+	public float AttacksPerSecond = 0.5f;
     public float SwordDamage;
     public HealthSystem HealthSystem;
 	public Sword sword;
@@ -34,18 +38,25 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space)
+			&& Time.time > nextAttack)
         {
-			sword._animator.SetTrigger ("attack");
-            foreach (var enemy in _enemiesInTrigger)
-            {
-                if (enemy == null)
-                {
-                    _enemiesInTrigger.Remove(enemy);
-                    return;
-                }
-				enemy.HealthSys.Damage(sword.SwordDamage);
-            }
+			Attack();
+			nextAttack = Time.time + 1 / AttacksPerSecond;
         }
     }
+
+	private void Attack()
+	{
+		sword._animator.SetTrigger("attack");
+		foreach (var enemy in _enemiesInTrigger)
+		{
+			if (enemy == null)
+			{
+				_enemiesInTrigger.Remove(enemy);
+				return;
+			}
+			enemy.HealthSys.Damage(sword.SwordDamage);
+		}
+	}
 }

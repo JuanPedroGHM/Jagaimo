@@ -67,7 +67,7 @@
 		</LevelWave>
 		<!--FinalBoss-->
 		<LevelWave Level="3"
-				   EnemyType="5"
+				   EnemyType="4"
 				   EnemyCount="1"
 				   SpawnTimeInSeconds="4">
 		</LevelWave>

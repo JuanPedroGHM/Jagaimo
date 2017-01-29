@@ -1,4 +1,4 @@
-﻿public class FatBossHealthSystem : HealthSystem
+﻿public class BossHealthSystem : HealthSystem
 {
 
     public Corpse corpse;

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FatBoss : Enemy
+public class Boss : Enemy
 {
     public Hero fathero;
 
@@ -12,12 +12,6 @@ public class FatBoss : Enemy
 	{
         base.Start();
 	    FindObjectOfType<SoundManager>().PlaySound("Boss_Spawn");
-	    HealthSys.maxHealth = fathero.MaxHealth;
 	    _moveTowards.Walkspeed = fathero.Walkspeed;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

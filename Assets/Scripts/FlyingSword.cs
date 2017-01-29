@@ -17,6 +17,7 @@ public class FlyingSword : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        FindObjectOfType<SoundManager>().PlaySound("Player_Charge");
         _moveTowards = GetComponent<MoveTowards>();
         _moveTowards.Target = Target;
         FindObjectOfType<CameraController>().player = gameObject;

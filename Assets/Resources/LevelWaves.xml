@@ -20,11 +20,37 @@
 					 EnemyCount="5"
 					 SpawnTimeInSeconds="0.4">
 		</LevelWave>
-		<!--Last Wave-->
+		<!--Pause-->
+		<!--FirstBoss-->
 		<LevelWave Level="3"
 					 EnemyType="3"
 					 EnemyCount="1"
 					 SpawnTimeInSeconds="4">
+		</LevelWave>
+		<!--Pause-->
+		<!--Wave 4-->
+		<LevelWave Level="4"
+				   EnemyType="2"
+				   EnemyCount="20"
+				   SpawnTimeInSeconds="0.4">
+		</LevelWave>
+		<!--FirstBoss-->
+		<LevelWave Level="3"
+				   EnemyType="3"
+				   EnemyCount="1"
+				   SpawnTimeInSeconds="4">
+		</LevelWave>
+		<!--Wave 4-->
+		<LevelWave Level="4"
+				   EnemyType="1"
+				   EnemyCount="10"
+				   SpawnTimeInSeconds="0.4">
+		</LevelWave>
+		<!--FirstBoss-->
+		<LevelWave Level="3"
+				   EnemyType="3"
+				   EnemyCount="2"
+				   SpawnTimeInSeconds="4">
 		</LevelWave>
 	</LevelWaves>
 </LevelCollection>

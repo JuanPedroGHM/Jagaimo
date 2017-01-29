@@ -8,8 +8,6 @@
     protected override void Die()
     {
         var fatCorpse=  Instantiate(corpse, transform.position, transform.rotation);
-
-
-        gameObject.SetActive(false);
+        base.Die();
     }
 }

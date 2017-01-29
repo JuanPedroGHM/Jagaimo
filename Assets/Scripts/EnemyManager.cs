@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -14,7 +15,7 @@ public class EnemyManager : MonoBehaviour
 		public int EnemyCount;
 		public float SpawnTimeInSeconds;
 	}
-	public List<Spawner> Spawners;
+	private List<Spawner> _spawners;
 
 	private Enemy enemyPrefab;
 	private int waveCounter;
@@ -25,7 +26,8 @@ public class EnemyManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		//load level wave config
+	    _spawners = FindObjectsOfType<Spawner>().ToList();
+	        //load level wave config
 		levelWaves = LevelWaveLoader.Load();
 		
 		//init first wave
@@ -45,13 +47,14 @@ public class EnemyManager : MonoBehaviour
 	    if (timeSinceLastSpawn >= timeBetweenSpawns)
 	    {
 			//spawn enemies
-	        foreach (var spawner in Spawners)
+	        foreach (var spawner in _spawners)
 	        {
 	            spawner.SpawnEnemy(enemyPrefab);
+	            enemyCounter--;
+	            if (enemyCounter <= 0) break;
 	        }
 	        timeSinceLastSpawn = 0;
-			enemyCounter--;
-			
+
 			if(enemyCounter <= 0)
 			{
 				//load next wave

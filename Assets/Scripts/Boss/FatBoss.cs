@@ -11,6 +11,7 @@ public class FatBoss : Enemy
 	protected override void Start()
 	{
         base.Start();
+	    FindObjectOfType<SoundManager>().PlaySound("Boss_Spawn");
 	    HealthSys.maxHealth = fathero.MaxHealth;
 	    _moveTowards.Walkspeed = fathero.Walkspeed;
 	}

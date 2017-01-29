@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.IO;
+using Assets.Scripts;
 
 public class CreateScriptableObjects : Editor {
 

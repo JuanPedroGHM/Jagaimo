@@ -2,16 +2,19 @@
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class Hero :ScriptableObject
+namespace Assets.Scripts
 {
-    public String HeroName;
-    public Sprite CharacterSprite;
-    public AnimatorController CharacterAnimator;
-    public float Walkspeed;
-    public float MaxHealth;
-
-    public override string ToString()
+    public class Hero :ScriptableObject
     {
-        return HeroName + " Walkspeed: " + Walkspeed + " MaxHealth: " + MaxHealth;
+        public String HeroName;
+        public Sprite CharacterSprite;
+        public AnimatorController CharacterAnimator;
+        public float Walkspeed;
+        public float MaxHealth;
+
+        public override string ToString()
+        {
+            return HeroName + " Walkspeed: " + Walkspeed + " MaxHealth: " + MaxHealth;
+        }
     }
 }
